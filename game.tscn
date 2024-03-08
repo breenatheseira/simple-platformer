@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://ctsldf0tc1w1r"]
+
+[ext_resource type="Texture2D" uid="uid://s247v27xf5m3" path="res://assets/player.jpg" id="1_78i5p"]
+[ext_resource type="Script" path="res://Player.gd" id="1_deayr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g3r6j"]
+size = Vector2(58, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5kb8"]
+size = Vector2(60, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fdn5b"]
+size = Vector2(539, 36.5226)
+
+[node name="Game" type="Node2D"]
+
+[node name="Player" type="Node2D" parent="."]
+position = Vector2(60, 180)
+script = ExtResource("1_deayr")
+metadata/_edit_lock_ = true
+
+[node name="PlayerSprite" type="Sprite2D" parent="Player"]
+position = Vector2(-1, 1)
+texture = ExtResource("1_78i5p")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(261, 0)
+
+[node name="RayCast2D" type="RayCast2D" parent="Player"]
+target_position = Vector2(0, 37)
+collide_with_areas = true
+
+[node name="HitBox" type="Area2D" parent="Player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/HitBox"]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_g3r6j")
+
+[node name="HeadBox" type="Area2D" parent="Player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/HeadBox"]
+position = Vector2(-1, -31.5)
+shape = SubResource("RectangleShape2D_s5kb8")
+
+[node name="Floor" type="Node2D" parent="."]
+position = Vector2(239, 262)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Floor"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/StaticBody2D"]
+position = Vector2(27, 7)
+rotation = -0.154638
+shape = SubResource("RectangleShape2D_fdn5b")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
