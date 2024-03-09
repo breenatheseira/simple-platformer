@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://Player.gd" id="1_deayr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g3r6j"]
-size = Vector2(28, 28)
+size = Vector2(10, 28)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s5kb8"]
 size = Vector2(32, 3)
@@ -31,7 +31,7 @@ collide_with_areas = true
 [node name="HitBox" type="Area2D" parent="Player"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/HitBox"]
-position = Vector2(-1, 1)
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_g3r6j")
 
 [node name="HeadBox" type="Area2D" parent="Player"]
@@ -42,3 +42,6 @@ shape = SubResource("RectangleShape2D_s5kb8")
 
 [node name="Floor" type="Node2D" parent="."]
 position = Vector2(60, 213)
+
+[connection signal="body_entered" from="Player/HitBox" to="Player" method="_on_hit_box_body_entered"]
+[connection signal="body_entered" from="Player/HeadBox" to="Player" method="_on_head_box_body_entered"]

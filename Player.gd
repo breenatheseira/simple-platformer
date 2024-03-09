@@ -38,3 +38,10 @@ func _physics_process(delta):
 			jumping = false
 			
 			position.y -= depth
+
+
+func _on_hit_box_body_entered(body):
+	queue_free()
+
+func _on_head_box_body_entered(body):
+	y_velocity = max(y_velocity, 0)
