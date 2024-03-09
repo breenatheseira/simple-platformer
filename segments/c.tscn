@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bqhhogndiqxsn"]
+
+[node name="StaticBody2D2" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(73.7447, 11.211)
+rotation = -0.000276103
+scale = Vector2(0.996574, 0.878808)
+polygon = PackedVector2Array(-74.263, 35.2518, 18.0516, 42.1082, 170.57, 60.3624, 369.274, -37.4352, 369.274, -35.1594, 517.78, -26.0097, 564.926, 37.7278, 565.912, 109.416, -75.2833, 104.664)
+
+[node name="CollisionShape2D2" type="CollisionPolygon2D" parent="."]
+position = Vector2(153.745, -166.789)
+rotation = -0.000276103
+scale = Vector2(0.996574, 0.878808)
+polygon = PackedVector2Array(20.0541, 60.3152, 80.2609, 58.0583, 158.53, 55.807, 144.469, 105.87, 10.0103, 99.0009)
+
+[node name="CollisionShape2D3" type="CollisionPolygon2D" parent="."]
+position = Vector2(373.745, -222.789)
+rotation = -0.000276103
+scale = Vector2(0.996574, 0.878808)
+polygon = PackedVector2Array(20.0541, 60.3152, 80.2609, 58.0583, 158.53, 55.807, 144.469, 105.87, 10.0103, 99.0009)

@@ -14,7 +14,7 @@ size = Vector2(32, 3)
 script = ExtResource("1_3m2i7")
 
 [node name="Player" type="Node2D" parent="."]
-position = Vector2(57, 181)
+position = Vector2(60, 179)
 script = ExtResource("1_deayr")
 
 [node name="PlayerSprite" type="Sprite2D" parent="Player"]
@@ -41,10 +41,4 @@ position = Vector2(-1, -17)
 shape = SubResource("RectangleShape2D_s5kb8")
 
 [node name="Floor" type="Node2D" parent="."]
-position = Vector2(239, 262)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Floor"]
-
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Floor/StaticBody2D"]
-position = Vector2(27, 7)
-rotation = -0.154638
+position = Vector2(60, 213)
