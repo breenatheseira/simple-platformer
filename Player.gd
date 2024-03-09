@@ -2,12 +2,21 @@ extends Node2D
 
 @onready var ray = $RayCast2D
 
+signal hit
+
 var grounded = false
 var gravity = 15
 var max_y_velocity = 300
 var y_velocity = 0
 var jumping = false
 var jump_speed = -500
+
+func _ready():
+	hide()
+
+func start():
+	position = Vector2.ZERO
+	show()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
@@ -39,9 +48,9 @@ func _physics_process(delta):
 			
 			position.y -= depth
 
-
 func _on_hit_box_body_entered(body):
-	queue_free()
+	hide()
+	hit.emit()
 
 func _on_head_box_body_entered(body):
 	y_velocity = max(y_velocity, 0)
