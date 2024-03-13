@@ -37,7 +37,6 @@ func _physics_process(delta):
 
 func spawn_inst(x,y):
 	var inst = segments[randi() % len(segments)].instantiate()
-	#var inst = segments[0].instantiate()
 	inst.position = Vector2(x,y)
 	$Floor.add_child(inst)
 
